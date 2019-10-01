@@ -1,12 +1,10 @@
-DSE201
-======
+# DSE201 - Data Management Systems
 
-Course directory for DSE201
+Work for Winter Quarter 2018 UCSD Masters of Data Science and Engineering Program. Data Management Systems class for Data, DSE 201.
 
-Homework 2 Notes:
+### Notes:
 
-For Cats, the "best" solution was done for all 5 questions.
+- Homework 2: For Cats, the "best" solution was done for all 5 questions.
 
 
-Homework 3 Notes:    
-**README.md file in the hw3 directory contains all solutions for milestone3**
+- Homework 3: README.md file in the hw3 directory contains all solutions for milestone3
