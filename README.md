@@ -2,9 +2,6 @@
 
 Work for Winter Quarter 2018 UCSD Masters of Data Science and Engineering Program. Data Management Systems class for Data, DSE 201.
 
-### Notes:
+The course provided an introduction to the management of structured data beginning with an introduction to database models including relational, hierarchical, and network approaches. It also covered topics in database system implementation including query languages and system architectures; parallel, column-oriented, and array-based database systems; advanced SQL features including user-defined functions (UDFs), triggers, indexes, statistical functions; and support for spatial data.
 
-- Homework 2: For Cats, the "best" solution was done for all 5 questions.
-
-
-- Homework 3: README.md file in the hw3 directory contains all solutions for milestone3
+Postgres was used for all homeworks and the final. 'analyze' and 'explain' were also used in multiple homeworks to test query optimization and performance.
