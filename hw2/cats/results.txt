@@ -1,0 +1,294 @@
+Results:
+
+Question one: Option “Overall Likes”: The Top-10 cat videos are the ones that have collected the highest numbers of likes, overall.
+
+Execute Q1(10) (execute for user 10):
+
+Results:  
+Overall simplest:
+vid	rank
+22	"8"
+11	"7"
+9	"6"
+1	"6"
+30	"6"
+21	"6"
+3	"6"
+17	"6"
+26	"6"
+15	"6"  <- top 10 stops here
+5	"5"
+28	"4"
+18	"3"
+4	"2"
+25	"2"
+12	"2"
+14	"2"
+13	"2"
+27	"2"
+16	"2"
+6	"1"
+19	"1"
+29	"1"
+10	"1"
+7	"1"
+24	"1"
+23	"1"
+2	"0" <- notice that these are zeros
+8	"0"
+20	"0"
+
+
+
+
+Overall better: suggest only unwatched videos (whether liked by X or not) 
+
+User 10 has watched video 9, so vid 9 is not included in results
+
+vid	rank
+22	"8"
+11	"7"
+30	"6"
+15	"6"
+3	"6"
+21	"6"
+1	"6"
+17	"6"
+26	"6"
+5	"5"
+
+
+
+Overall best: suggest only videos that are unwatched and unliked by user X 
+
+User 10 has watched video 9, so vid 9 is not included in results
+also user 10 has liked videos 21 and 17
+
+
+vid	rank
+22	"8"
+11	"7"
+30	"6"
+1	"6"
+26	"6"
+3	"6"
+15	"6"
+5	"5"
+28	"4"
+18	"3"
+
+
+
+Question 2: Option “Friend Likes”: The Top-10 cat videos are the ones that have collected the highest numbers of likes from the friends of X.
+
+Execute Q2(1) (Execute for user 1) :
+
+Overall Simplest:
+
+vid	rank
+11	"5"
+3	"4"
+26	"4"
+21	"4"
+15	"3" --From this point on, select 6 tuples (let postres break ties)
+9	"3"
+22	"2"
+13	"2"
+30	"2"
+12	"2"
+17	"2"
+1	"2"
+5	"2"
+
+overall better:  suggest only unwatched videos (whether liked by X or not) 
+User 1 has watched vid 11
+
+vid	rank
+26	"4"
+21	"4"
+3	"4"
+9	"3"
+15	"3"
+30	"2" --From this point on, select 5 tuples (let postres break ties)
+12	"2"
+17	"2"
+1	"2"
+5	"2"
+22	"2"
+13	"2"
+
+
+Overall Best: suggest only videos that are unwatched and unliked by user X 
+User 1 has watched vid 11 and liked videos 9, 15 etc...
+
+vid	rank
+3	"4"
+26	"4"
+21	"4"
+13	"2"
+5	"2"
+12	"2"
+1	"2"
+10	"1" --From this point on, select 3 tuples (let postres break ties)
+14	"1"
+28	"1"
+18	"1"
+25	"1"
+
+Question 3: Option “Friends-of-Friends Likes”: The Top-10 cat videos are the ones that have collected the highest numbers of likes from friends and friends-of-friends.
+
+Execute Q3(1) (Execute for user 1): 
+
+Overall simplest:
+
+vid	rank  
+26	"6"   -- pick top 10 (let postres break ties)
+21	"6" 
+3	"5"
+11	"5"
+15	"5"
+17	"4"
+28	"3"
+9	"3"
+30	"3"
+22	"3"
+5	"3"
+
+
+Overall Better: suggest only unwatched videos (whether liked by X or not) 
+
+User 1 has watched vid 11
+
+vid	rank
+26	"6"
+21	"6"
+3	"5"
+15	"5"
+17	"4"
+28	"3"
+30	"3"
+9	"3"
+22	"3"
+5	"3"
+
+
+Overall Best: suggest only videos that are unwatched and unliked by user X 
+
+vid	rank
+26	"6" -- pick top 10
+21	"6"
+3	"5"
+5	"3"
+28	"3"
+13	"2"
+4	"2"
+14	"2"
+12	"2"
+25	"2"
+1	"2"
+
+Question 4: Option “My kind of cats”: The Top-10 cat videos are the ones that have collected the most likes from users who have liked at least one cat video that was liked by X.
+
+Execute Q4(1) for user 1: 
+
+Overall Simplest:
+
+vid	rank
+22	"7" -- pick top 10
+21	"7"
+11	"6"
+26	"6"
+1	"6"
+3	"6"
+17	"6"
+30	"5"
+15	"5"
+5	"5"
+9	"5"
+
+Overall better: suggest only unwatched videos (whether liked by X or not) 
+
+vid	rank
+21	"7"
+22	"7"
+17	"6"
+26	"6"
+3	"6"
+1	"6"
+30	"5"
+5	"5"
+15	"5"
+9	"5"
+
+
+Overall Best: suggest only videos that are unwatched and unliked by user X 
+
+vid	rank
+21	"7"
+1	"6"
+26	"6"
+3	"6"
+5	"5"
+28	"4"
+18	"3"
+13	"2"
+29	"2"
+4	"2"
+14	"2"
+16	"2"
+12	"2"
+25	"2"
+
+Question 5: Option “My kind of cats – with preference (to cat aficionados that have the same tastes)”
+
+Execute Q5(1) for User 1: 
+
+
+Overall Simplest:
+
+vid	rank
+22	"6.16721805609146"
+3	"4.994686607802"
+1	"4.96993749796584"
+11	"4.80964050609339"
+21	"4.70049603666833"
+26	"4.70049603666833"
+5	"4.20074109023513"
+9	"4.14958856778774"
+30	"3.90655051910145"
+15	"3.61235994796777"
+
+Execute Q5(1):
+
+Overall better: suggest only unwatched videos (whether liked by X or not) 
+
+vid	rank
+22	"6.16721805609146"
+3	"4.994686607802"
+1	"4.96993749796584"
+26	"4.70049603666833"
+21	"4.70049603666833"
+5	"4.20074109023513"
+9	"4.14958856778774"
+30	"3.90655051910145"
+15	"3.61235994796777"
+17	"3.25333800532611"
+
+
+Execute Q5(1): 
+
+Overall best: suggest only videos that are unwatched and unliked by user X 
+
+vid	rank
+3	"4.994686607802"
+1	"4.96993749796584"
+26	"4.70049603666833"
+21	"4.70049603666833"
+5	"4.20074109023513"
+28	"2.70926996097583"
+18	"2.20951501454263"
+16	"1.55630250076729"
+14	"1.50514997831991"
+13	"1.44715803134222"
+
+

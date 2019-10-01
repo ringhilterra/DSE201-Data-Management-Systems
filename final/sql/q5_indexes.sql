@@ -1,0 +1,1 @@
+CREATE INDEX q1 on matches (vteam); --for Q1

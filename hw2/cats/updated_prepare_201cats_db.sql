@@ -1,0 +1,1 @@
+INSERT INTO video VALUES (31,'BLAH');
